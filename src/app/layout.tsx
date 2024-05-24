@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { NextUIProvider } from "@nextui-org/react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <NextUIProvider>
+          <main className="purple-dark text-foreground bg-background min-h-screen">
+            {children}
+          </main>
+        </NextUIProvider>
+      </body>
     </html>
   );
 }
