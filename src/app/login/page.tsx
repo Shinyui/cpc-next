@@ -4,7 +4,7 @@ import { FaGoogle } from "react-icons/fa";
 const Login = () => {
   return (
     <>
-      <div className="h-screen flex flex-col items-center justify-between pl-[24px] pr-[24px] pt-[120px] pb-[40px]">
+      <div className="h-screen flex flex-col items-center justify-between">
         <div>
           <h2 className="text-5xl mb-[18px]">Hey, 歡迎回來</h2>
           <p className="text-xl">選擇一個喜歡的登入方式，開始學習吧！</p>

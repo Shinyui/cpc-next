@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NextUIProvider } from "@nextui-org/react";
+import Nav from "@/components/Nav/Nav.component";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -19,8 +20,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextUIProvider>
-          <main className="purple-dark text-foreground bg-background min-h-screen">
-            {children}
+          <main className="purple-dark text-foreground bg-background p-[24px]">
+            <div className="min-h-screen">{children}</div>
+            <Nav />
+            <footer className="text-center">
+              <p>
+                Copyright © 2024 WuCareer® <br /> All rights reserved.
+              </p>
+            </footer>
           </main>
         </NextUIProvider>
       </body>
