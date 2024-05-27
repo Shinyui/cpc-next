@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextUIProvider>
-          <main className="purple-dark text-foreground bg-background p-[24px]">
+          <main className="purple-dark text-foreground bg-background p-[16px]">
             <div className="min-h-screen">{children}</div>
             <Nav />
             <footer className="text-center">
