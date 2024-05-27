@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.3.6",
+    "@types/comma-number": "^2.1.2",
+    "comma-number": "^2.1.0",
     "framer-motion": "^11.2.6",
     "next": "14.2.3",
     "react": "^18",
