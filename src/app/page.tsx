@@ -1,10 +1,8 @@
-import ToolCard from "@/components/ToolCard/ToolCard.component";
+import Link from "next/link";
+import { Card } from "@nextui-org/react";
 import Carousel from "@/components/Carousel/Carousel.component";
 import CourseCard from "@/components/CourseCard/CourseCard.component";
-import Link from "next/link";
-import MaskGroup from "../../public/Mask group.svg";
-import MaskGroup1 from "../../public/Mask group 1.svg";
-import MaskGroup2 from "../../public/Mask group 2.svg";
+import OrangeLavaCard from "@/components/Svg/ToolCard/OrangeLavaCard.component";
 
 const Home = () => {
   const getLocalDateString = () => {
@@ -26,27 +24,38 @@ const Home = () => {
 
       <section className="mb-[24px]">
         <h2 className="text-3xl mb-[12px]">打單幣備</h2>
-        <div className="flex overflow-scroll">
+        <div className="flex overflow-scroll gap-[16px]">
           <div className="aspect-[2/1] h-[100px]">
-            <ToolCard
-              title="合約定損倉位"
-              subTitle="計算機"
-              imageSrc={MaskGroup}
-            />
+            <Card
+              className="bg-transparent border-0"
+              isBlurred={false}
+              isPressable={true}
+              shadow="none"
+            >
+              <OrangeLavaCard title="倉位計算" subTitle="打單必備" />
+            </Card>
           </div>
+
           <div className="aspect-[2/1] h-[100px]">
-            <ToolCard
-              title="機構倉手數"
-              subTitle="計算機"
-              imageSrc={MaskGroup1}
-            />
+            <Card
+              className="bg-transparent border-0"
+              isBlurred={false}
+              isPressable={true}
+              shadow="none"
+            >
+              <OrangeLavaCard title="倉位計算" subTitle="打單必備" />
+            </Card>
           </div>
+
           <div className="aspect-[2/1] h-[100px]">
-            <ToolCard
-              title="合約利潤"
-              subTitle="計算機"
-              imageSrc={MaskGroup2}
-            />
+            <Card
+              className="bg-transparent border-0"
+              isBlurred={false}
+              isPressable={true}
+              shadow="none"
+            >
+              <OrangeLavaCard title="倉位計算" subTitle="打單必備" />
+            </Card>
           </div>
         </div>
       </section>
