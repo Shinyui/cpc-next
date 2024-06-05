@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Tabs, Tab, Accordion, AccordionItem } from "@nextui-org/react";
 import LessonCard from "@/components/LessonCard/LessonCard.component";
 import { CourseTab as CourseTabInterface } from "./type";
@@ -9,13 +10,8 @@ const CourseTab = (course: CourseTabInterface) => {
     <Tabs aria-label="Options" color="default" variant="underlined">
       <Tab key="unit" title="課程單元">
         <div>
-          <h2 className="text-3xl mb-[8px]">課程單元</h2>
-          <p className="text-md">這邊會放一堆有關於這個課程影片</p>
-
-          <Accordion variant="splitted" className="p-0 mt-[24px]">
+          <Accordion variant="splitted" className="p-0">
             {course.chapters.map((chapter, idx) => {
-              console.log(chapter);
-
               return (
                 <AccordionItem
                   key={idx}
@@ -25,11 +21,15 @@ const CourseTab = (course: CourseTabInterface) => {
                   <div className="flex flex-col gap-[6px] mb-[12px]">
                     {chapter.lessons.map((lesson) => {
                       return (
-                        <LessonCard
+                        <Link
                           key={lesson.id}
-                          lessonName={lesson.lessonName}
-                          isSelected={false}
-                        />
+                          href={`/courses/${course.id}?item=${lesson.id}`}
+                        >
+                          <LessonCard
+                            lessonName={lesson.lessonName}
+                            isSelected={false}
+                          />
+                        </Link>
                       );
                     })}
                   </div>
@@ -41,7 +41,6 @@ const CourseTab = (course: CourseTabInterface) => {
       </Tab>
       <Tab key="info" title="課程介紹">
         <div>
-          <h2 className="text-3xl mb-[8px]">{course.courseName}</h2>
           <p className="text-md">{course.courseDescription}</p>
         </div>
       </Tab>

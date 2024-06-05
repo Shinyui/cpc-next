@@ -19,6 +19,7 @@ const queryCourse = async (id) => {
   const query = gql`
     {
       course(where: { id: ${JSON.stringify(id)} }) {
+        id
         courseName
         courseDescription
         chapters {
@@ -28,10 +29,6 @@ const queryCourse = async (id) => {
             lessons {
               id
               lessonName
-              bunnyVideoId
-              bunnyVideoLibraryId
-              videoSource
-              youtubeVideoId
             }
           }
         }
@@ -41,5 +38,21 @@ const queryCourse = async (id) => {
 
   return await request(config.endPoint, query);
 };
+const queryLesson = async (id) => {
+  const query = gql`
+    {
+      lesson(where: { id: ${JSON.stringify(id)}}) {
+        id
+        lessonName
+        videoSource
+        youtubeVideoId
+        bunnyVideoId
+        bunnyVideoLibraryId
+      }
+    }
+  `;
 
-export { queryCourses, queryCourse };
+  return await request(config.endPoint, query);
+};
+
+export { queryCourses, queryCourse, queryLesson };

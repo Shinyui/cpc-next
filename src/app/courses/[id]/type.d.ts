@@ -1,4 +1,5 @@
 interface Course {
+  id: string;
   courseName: string;
   courseDescription: string;
   chapters: {
