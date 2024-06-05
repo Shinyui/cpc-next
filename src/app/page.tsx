@@ -79,7 +79,7 @@ const Home = async () => {
         <div className="flex overflow-scroll gap-[10px]">
           {courses.map((course: Course) => {
             return (
-              <div>
+              <div key={course.id}>
                 <Link href={`/courses/${course.id}`}>
                   <CourseCard
                     title={course.courseName}

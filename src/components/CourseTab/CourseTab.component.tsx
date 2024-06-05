@@ -26,6 +26,7 @@ const CourseTab = (course: CourseTabInterface) => {
                     {chapter.lessons.map((lesson) => {
                       return (
                         <LessonCard
+                          key={lesson.id}
                           lessonName={lesson.lessonName}
                           isSelected={false}
                         />
