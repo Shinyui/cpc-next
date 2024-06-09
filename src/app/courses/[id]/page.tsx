@@ -30,3 +30,4 @@ const Courses = async (props: CourseShowProps) => {
 };
 
 export default Courses;
+export const revalidate = 60;
