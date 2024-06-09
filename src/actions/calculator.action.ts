@@ -21,20 +21,7 @@ const calculateResult = (data: Data) => {
   return { percentageChange, tradeSize };
 };
 
-const calculateContractSize = (
-  currentState: {
-    message: string;
-    errors: {
-      principle: string[];
-      risk: string[];
-      entry: string[];
-      sl: string[];
-    };
-    tradeSize: number;
-    percentageChange: number;
-  },
-  formdata: FormData
-) => {
+const calculateContractSize = (prevState: any, formdata: FormData) => {
   const principle = Number(formdata.get("principle"));
   const risk = Number(formdata.get("risk"));
   const entry = Number(formdata.get("entry"));
@@ -81,7 +68,7 @@ const calculateContractSize = (
   if (!result.success) {
     ({ errors: result.error.flatten().fieldErrors });
 
-    return { ...currentState, errors: result.error.flatten().fieldErrors };
+    return { ...prevState, errors: result.error.flatten().fieldErrors };
   }
 
   const { tradeSize, percentageChange } = calculateResult({
@@ -92,7 +79,7 @@ const calculateContractSize = (
   });
 
   return {
-    ...currentState,
+    ...prevState,
     errors: { principle: [], risk: [], entry: [], sl: [] },
     tradeSize,
     percentageChange,

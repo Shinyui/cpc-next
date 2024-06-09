@@ -4,14 +4,14 @@ import { Input, Button } from "@nextui-org/react";
 import calculateContractSize from "@/actions/calculator.action";
 import { useFormState } from "react-dom";
 
-const FutureSize = () => {
-  const initialState = {
-    message: "",
-    errors: { principle: [], risk: [], entry: [], sl: [] },
-    tradeSize: 0,
-    percentageChange: 0,
-  };
+const initialState = {
+  message: "",
+  errors: { principle: [], risk: [], entry: [], sl: [] },
+  tradeSize: 0,
+  percentageChange: 0,
+};
 
+const FutureSize = () => {
   const [formState, formAction] = useFormState(
     calculateContractSize,
     initialState
