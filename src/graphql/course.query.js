@@ -8,6 +8,7 @@ const queryCourses = async () => {
         id
         courseName
         courseDescription
+        isHidden
       }
     }
   `;

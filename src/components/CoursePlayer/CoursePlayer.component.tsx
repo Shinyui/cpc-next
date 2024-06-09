@@ -28,6 +28,7 @@ const CoursePlayer = () => {
         height={"100%"}
         style={{ aspectRatio: "16/9", marginBottom: "16px" }}
         url={`https://www.youtube.com/watch?v=${lesson?.youtubeVideoId}`}
+        controls={true}
       />
       <div>
         <p className="text-[16px] text-[#A1A1A1]">正在播放</p>

@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { Tabs, Tab, Accordion, AccordionItem } from "@nextui-org/react";
 import LessonCard from "@/components/LessonCard/LessonCard.component";
 import { CourseTab as CourseTabInterface } from "./type";
 
 const CourseTab = (course: CourseTabInterface) => {
+  const searchParams = useSearchParams();
+  const item = searchParams.get("item");
+
   return (
     <Tabs aria-label="Options" color="default" variant="underlined">
       <Tab key="unit" title="課程單元">
@@ -27,7 +31,7 @@ const CourseTab = (course: CourseTabInterface) => {
                         >
                           <LessonCard
                             lessonName={lesson.lessonName}
-                            isSelected={false}
+                            isSelected={lesson.id === item ? true : false}
                           />
                         </Link>
                       );

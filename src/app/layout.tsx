@@ -7,8 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CPC | 加密先鋒社區",
-  description: "CPC | 加密先鋒社區",
+  title: "Crypto Pioneer Community",
+  description: "Crypto Pioneer Community",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh-TW">
       <body className={inter.className}>
         <NextUIProvider>
           <main className="purple-dark text-foreground bg-background p-[16px]">
@@ -25,7 +25,7 @@ export default function RootLayout({
             <Nav />
             <footer className="text-center">
               <p>
-                Copyright © 2024 WuCareer® <br /> All rights reserved.
+                Copyright © 2024 CPC® <br /> All rights reserved.
               </p>
             </footer>
           </main>
